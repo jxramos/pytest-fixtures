@@ -261,7 +261,7 @@ export class PytestFixtureProvider implements vscode.CompletionItemProvider, vsc
         _token: vscode.CancellationToken,
         _context: vscode.CompletionContext
     ): vscode.CompletionItem[] {
-        log(`Called provideCompletionItems: ${document.fileName}, position: ${JSON.stringify(position)}`);
+        log(`Called provideCompletionItems: ${document.fileName} , position: ${JSON.stringify(position)}`);
 
         return this.getSuggestions(document, position);
     }
@@ -269,7 +269,7 @@ export class PytestFixtureProvider implements vscode.CompletionItemProvider, vsc
     provideDefinition(document: vscode.TextDocument, position: vscode.Position, _token: vscode.CancellationToken): vscode.ProviderResult<vscode.Definition | vscode.LocationLink[]> {
         if(isWithinTestFunctionArgs(document, position)) {
             return new Promise((resolve) => {
-                log(`Called provideDefinition: ${document.fileName}, position: ${JSON.stringify(position)}`);
+                log(`Called provideDefinition: ${document.fileName} , position: ${JSON.stringify(position)}`);
                 const testPath = document.uri.fsPath;
 
                 if (this.cache[testPath]?.length) {
