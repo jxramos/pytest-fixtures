@@ -12,16 +12,16 @@ VSCode extension to provide intellisense for Pytest Fixtures. Inspired by [pytes
 
 * Autocomplete suggestions for parameters of test functions where fixtures may be used. Includes docstrings. Context aware of different fixtures available for each file.
 * Go To Definition support. Uses pytest output to determine location of fixture.
-* When type ':' character after a parameter and press autocomplete keyboard shortcut, the return type of the fixture is showed if the fixture is annotated with return type.
+* Type hint autocomplete: when typing the '`:`' character after a parameter and subsequently pressing the autocomplete keyboard shortcut, the return type of the fixture is shown if the fixture is annotated with a return type.
 
 Will first check `"python.testing.pytestPath"` for pytest, then will fallback on `python -m pytest` with the selected interpreter.
 
 ## Optional extra command line arguments for pytest to discover fixtures
 
-In the .vscode/settings.json you can add the extra arguments and the plugin uses this args if exist.
+In the .vscode/settings.json you can add the extra arguments configuration which will cause the plugin to use these args if they exist by passesing them as commandline arguments to every pytest invocation.
 
 
-`"pytest-fixtures.extraArguments"` is an array of string.
+`"pytest-fixtures.extraArguments"` is an array of strings.
 
 ```json
 {
@@ -35,7 +35,7 @@ In the .vscode/settings.json you can add the extra arguments and the plugin uses
 You can also add additional decorators used to identify fixtures
 
 
-`"pytest-fixtures.additionalDecorators"` is an array of string.
+`"pytest-fixtures.additionalDecorators"` is an array of strings.
 
 ```json
 {
