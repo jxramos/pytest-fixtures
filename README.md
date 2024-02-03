@@ -18,7 +18,7 @@ Will first check `"python.testing.pytestPath"` for pytest, then will fallback on
 
 ## Optional extra command line arguments for pytest to discover fixtures
 
-In the .vscode/settings.json you can add the extra arguments configuration which will cause the plugin to use these args if they exist by passesing them as commandline arguments to every pytest invocation.
+In the .vscode/settings.json you can add the extra arguments configuration which will cause the plugin to use these args if they exist by passing them as commandline arguments to every pytest invocation.
 
 
 `"pytest-fixtures.extraArguments"` is an array of strings.
